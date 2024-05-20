@@ -3,7 +3,6 @@ This repo contains automation framework which I have been trying to make using a
 
 And I have created some [testcase](https://docs.google.com/spreadsheets/d/1dMsE50kiIePRwSjyk7W1baRD4LiG42CL7dozgxCFlMU/edit?usp=sharing) for this website.
 
-Although the testcases are not finished, but it will gives an idea.
 
 In this project i am using following things:
 - Java language
