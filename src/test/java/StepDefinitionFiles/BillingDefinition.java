@@ -3,7 +3,6 @@ package StepDefinitionFiles;
 import PageObjects.BillingPage;
 import PageObjects.CartDialogBox;
 import TestContext.TestContext;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.By;
@@ -11,8 +10,8 @@ import java.util.LinkedHashMap;
 import java.util.List;
 
 public class BillingDefinition {
-    private TestContext context;
-    private BillingPage billingPage;
+    private final TestContext context;
+    private final BillingPage billingPage;
 
     public BillingDefinition( TestContext context){
         this.context=context;

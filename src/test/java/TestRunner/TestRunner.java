@@ -8,9 +8,9 @@ import org.testng.annotations.DataProvider;
 ,plugin = {"pretty","html:target/testReport.html"})
 public class TestRunner extends AbstractTestNGCucumberTests {
 
-//    @Override
-//    @DataProvider(parallel = true)
-//    public Object[][] scenarios() {
-//        return super.scenarios();
-//    }
+    @Override
+    @DataProvider(parallel = true)
+    public Object[][] scenarios() {
+        return super.scenarios();
+    }
 }

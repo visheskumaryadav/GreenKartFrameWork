@@ -4,9 +4,7 @@ package TestContext;
 import browserSetup.SetBrowser;
 import configuration.Configuration;
 import org.json.JSONObject;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.testng.asserts.SoftAssert;
 import pageObjectFactory.PageObjects;
 
@@ -87,6 +85,4 @@ public class TestContext {
     public void closeBrowser(){
         browser.close();
     }
-
-
 }

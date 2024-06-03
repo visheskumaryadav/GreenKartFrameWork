@@ -32,27 +32,17 @@ public class CartDialogBoxDefinition {
         LinkedHashMap<String,Integer> productsAddedByUserInCart = Utility.setProductsNameWithQty(context.getProductsAddedByUserInCart(),context.getProducts());
         // products in cart and products added by user should be same
         if(productsInCart.size()==productsAddedByUserInCart.size()){
-//            System.out.println("Size is SAME");
-//            System.out.println(":::::::::KeySet:::::::::::::::");
-//            System.out.println(productsAddedByUserInCart.keySet());
             Iterator<String> it=productsAddedByUserInCart.keySet().iterator();
-            for(int i=0;i<productsInCart.size();i++){
-                String key=it.next();
-                String productInCart=productsInCart.get(i).findElement(By.xpath(cartDialogBox.productName)).getText().split("-")[0].trim();
-//                System.out.println("Product QTY in cart "+productsInCart.get(i).findElement(By.xpath(cartDialogBox.productQty)).getText());
-//                System.out.println("Product PRICE in cart "+productsInCart.get(i).findElement(By.xpath(cartDialogBox.productPrice)).getText());
-//                System.out.println("Product TOTAL in cart "+productsInCart.get(i).findElement(By.xpath(cartDialogBox.totalPriceOfProduct)).getText());
-                Integer productQtyInCart=Integer.parseInt(productsInCart.get(i).findElement(By.xpath(cartDialogBox.productQty)).getText().split(" ")[0].trim());
-                Integer productQtyByUser=productsAddedByUserInCart.get(key);
-                context.assertion.assertTrue(key.trim().equalsIgnoreCase(productInCart),"Product mismatch!!!!");
-                context.assertion.assertTrue(Objects.equals(productQtyByUser, productQtyInCart),"product count mismatch!!!");
-
-//                 System.out.println("Product in cart::"+productInCart+"::: productQtyInCart::"+productQtyInCart);
-//                 System.out.println("Product add by user::"+key +":::" + productQtyByUser);
-             }
+            for (WebElement element : productsInCart) {
+                String key = it.next();
+                String productInCart = element.findElement(By.xpath(cartDialogBox.productName)).getText().split("-")[0].trim();
+                Integer productQtyInCart = Integer.parseInt(element.findElement(By.xpath(cartDialogBox.productQty)).getText().split(" ")[0].trim());
+                Integer productQtyByUser = productsAddedByUserInCart.get(key);
+                context.assertion.assertTrue(key.trim().equalsIgnoreCase(productInCart), "Product mismatch!!!!");
+                context.assertion.assertTrue(Objects.equals(productQtyByUser, productQtyInCart), "product count mismatch!!!");
+            }
         }else{
             context.assertion.fail("products in cart are different which were added by user");
-//            System.out.println("Size is DIFFERENT");
         }
     }
 
