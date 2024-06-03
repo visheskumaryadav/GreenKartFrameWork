@@ -42,10 +42,7 @@ GreenKartV3
 │           ├───TestData
 │           └───TestRunner
 └───target
-<<<<<<< HEAD
-=======
 
->>>>>>> refs/remotes/origin/master
 ````
 
 
