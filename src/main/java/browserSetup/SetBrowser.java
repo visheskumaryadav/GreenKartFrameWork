@@ -16,9 +16,11 @@ public class SetBrowser {
         if(browserName.equalsIgnoreCase("chrome")){
 //            WebDriverManager.chromedriver().setup();
             ChromeOptions options=new ChromeOptions();
-            System.out.println(System.getProperty("user.dir"));
-            options.setBinary(System.getProperty("user.dir")+"\\drivers\\chrome-win64\\chrome.exe");
-            driver=new ChromeDriver(options);
+//            System.out.println(System.getProperty("user.dir"));
+//            options.setBinary(System.getProperty("user.dir")+"\\drivers\\chrome-win64\\chrome.exe");
+//            driver=new ChromeDriver(options);
+            driver=new ChromeDriver();
+
             driver.manage().window().maximize();
         } else if (browserName.equalsIgnoreCase("firefox")) {
             WebDriverManager.firefoxdriver().setup();

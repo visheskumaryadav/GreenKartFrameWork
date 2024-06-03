@@ -42,7 +42,5 @@ GreenKartV3
 │           ├───TestData
 │           └───TestRunner
 └───target
-
-
 ````
 >[WORK IN PROGRESS](#)
